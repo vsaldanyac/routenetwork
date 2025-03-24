@@ -30,6 +30,7 @@
         <org.springframework.boot.version>2.6.7</org.springframework.boot.version>
         <org.projectlombok.version>1.18.12</org.projectlombok.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <start-class>com.caravelo.api.CaraveloRouteNetworkApplication</start-class>
     </properties>
 
     <dependencies>
@@ -112,6 +113,13 @@
                                 <version>${org.mapstruct.version}</version>
                             </path>
                         </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <skip>true</skip>
                     </configuration>
                 </plugin>
             </plugins>
