@@ -17,7 +17,7 @@
     <name>Caravelo Route Network</name>
 
     <modules>
-        <module>routnet-api</module>
+        <module>routenet-api</module>
         <module>routenet-business</module>
         <module>routenet-persistence</module>
         <module>routenet-common</module>

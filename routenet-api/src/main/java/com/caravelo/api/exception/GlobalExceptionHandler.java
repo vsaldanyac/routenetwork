@@ -1,4 +1,4 @@
-package com.caravelo.persistence.exception;
+package com.caravelo.api.exception;
 
 import com.caravelo.business.exception.RouteNotFoundException;
 import lombok.Data;

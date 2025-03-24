@@ -1,8 +1,8 @@
-package com.caravelo.persistence.controllers;
+package com.caravelo.api.controllers;
 
 import com.caravelo.business.service.RouteService;
-import com.caravelo.persistence.dto.RouteResponseDTO;
-import com.caravelo.persistence.mapper.RouteMapper;
+import com.caravelo.api.dto.RouteResponseDTO;
+import com.caravelo.api.mapper.RouteMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

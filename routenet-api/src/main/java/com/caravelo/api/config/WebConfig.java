@@ -1,6 +1,6 @@
-package com.caravelo.persistence.config;
+package com.caravelo.api.config;
 
-import com.caravelo.persistence.filter.TenantFilter;
+import com.caravelo.api.filter.TenantFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

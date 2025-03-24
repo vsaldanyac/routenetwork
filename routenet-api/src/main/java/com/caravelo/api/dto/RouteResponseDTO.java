@@ -1,4 +1,4 @@
-package com.caravelo.persistence.dto;
+package com.caravelo.api.dto;
 
 import com.caravelo.business.model.Airline;
 import com.caravelo.business.model.Station;

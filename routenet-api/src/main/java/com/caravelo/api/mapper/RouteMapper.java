@@ -1,7 +1,7 @@
-package com.caravelo.persistence.mapper;
+package com.caravelo.api.mapper;
 
 import com.caravelo.business.model.Route;
-import com.caravelo.persistence.dto.RouteResponseDTO;
+import com.caravelo.api.dto.RouteResponseDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

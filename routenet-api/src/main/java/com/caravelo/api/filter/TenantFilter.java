@@ -1,4 +1,4 @@
-package com.caravelo.persistence.filter;
+package com.caravelo.api.filter;
 
 
 import com.caravelo.common.TenantContext;
