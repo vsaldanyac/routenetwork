@@ -41,7 +41,7 @@ public class RouteExternalMapperDecorator implements ExternalMapper {
 
 	@Override
 	public List<Station> mapFlightDataToStations(List<FlightData> flightDataList) {
-		List<Station> stations = new ArrayList();
+		List<Station> stations = new ArrayList<>();
 		flightDataList.forEach(flightData -> {
 			Station departureStation = new Station();
 			departureStation.setExternalId(flightData.getDep_iata());
@@ -64,13 +64,6 @@ public class RouteExternalMapperDecorator implements ExternalMapper {
 	@Override
 	public Station mapArrStationDataToStation(Direct direct) {
 		return delegate.mapArrStationDataToStation(direct);
-	}
-
-	@Override
-	public Station mapFDRouteToStation(Direct direct) {
-		Station station = new Station();
-		station.setName(direct.getArrivalStation());
-		return station;
 	}
 
 	@Override

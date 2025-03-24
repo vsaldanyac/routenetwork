@@ -46,8 +46,6 @@ public interface ExternalMapper {
 		station.setExternalId(direct.getArrivalStation());
 	}
 
-	Station mapFDRouteToStation(Direct direct);
-
 	List<Station> mapStationsFromSD(List<StationData> stationData);
 
 }

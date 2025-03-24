@@ -82,7 +82,7 @@ public class BackupFlightsApiServiceImpl implements BackupFlightsApiService {
 		try {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
-			headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+			headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 			Map<String, String> urlParams = new HashMap<>();
 			HttpEntity<String> entity = new HttpEntity<>(headers);
 			UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(backupApiService);

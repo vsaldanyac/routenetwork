@@ -5,7 +5,6 @@
 	import com.caravelo.business.service.RouteService;
 	import com.caravelo.common.TenantContext;
 	import com.caravelo.persistence.dao.RouteDAO;
-	import com.caravelo.persistence.model.RouteEntity;
 	import org.springframework.data.domain.Pageable;
 	import org.springframework.stereotype.Service;
 	import org.springframework.transaction.annotation.Transactional;
