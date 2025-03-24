@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.net.MalformedURLException;
-
 @ControllerAdvice
 @RestController
 public class GlobalExceptionHandler {

@@ -1,10 +1,7 @@
 package com.caravelo.business.model.mapper;
 
-import com.caravelo.business.model.external.FlightData;
 import com.caravelo.business.model.Route;
-import com.caravelo.business.model.external.StationData;
 import com.caravelo.persistence.model.RouteEntity;
-import org.mapstruct.DecoratedWith;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

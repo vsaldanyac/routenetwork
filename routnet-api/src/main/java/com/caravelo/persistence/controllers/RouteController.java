@@ -1,10 +1,9 @@
 package com.caravelo.persistence.controllers;
 
-import com.caravelo.business.service.FlightsApiService;
+import com.caravelo.business.service.RouteService;
 import com.caravelo.persistence.dto.RouteResponseDTO;
 import com.caravelo.persistence.dto.filter.RouteFilter;
 import com.caravelo.persistence.mapper.RouteMapper;
-import com.caravelo.business.service.RouteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
