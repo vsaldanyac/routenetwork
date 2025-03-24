@@ -5,6 +5,8 @@
 	import com.caravelo.business.service.RouteService;
 	import com.caravelo.common.TenantContext;
 	import com.caravelo.persistence.dao.RouteDAO;
+	import com.caravelo.persistence.model.RouteEntity;
+	import org.springframework.data.domain.Pageable;
 	import org.springframework.stereotype.Service;
 	import org.springframework.transaction.annotation.Transactional;
 
@@ -21,8 +23,13 @@ public class RouteServiceImpl implements RouteService {
 	}
 
 	@Override
-	public List<Route> findAll() {
-		return routeMapper.map(routeDAO.findAllByTenantId(TenantContext.getTenantId()));
+	public List<Route> findAll(Pageable pageable) {
+		return routeMapper.map(routeDAO.findAllByTenantId(TenantContext.getTenantId(), pageable));
+	}
+
+	@Override
+	public List<Route> findByStation(Pageable pageable, String stationCode) {
+		return routeMapper.map(routeDAO.findByTenantIdAndOriginStation_Code(TenantContext.getTenantId(), stationCode, pageable));
 	}
 
 	@Override

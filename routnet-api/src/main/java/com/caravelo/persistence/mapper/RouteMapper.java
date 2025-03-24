@@ -1,7 +1,7 @@
 package com.caravelo.persistence.mapper;
 
-import com.caravelo.persistence.dto.RouteResponseDTO;
 import com.caravelo.business.model.Route;
+import com.caravelo.persistence.dto.RouteResponseDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -14,5 +14,5 @@ public interface RouteMapper {
 
 	RouteResponseDTO map(Route routeResponseDTO);
 
-	List<RouteResponseDTO> map(List<Route> route);
+	List<RouteResponseDTO> map(List<Route> routeResponseDTO);
 }

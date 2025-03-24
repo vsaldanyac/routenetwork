@@ -9,13 +9,13 @@ public class Route {
 
 	private String externalId;
 
-	public String name;
+	private String name;
 
-	public String flightNumber;
+	private String flightNumber;
 
-	public Station originStation;
+	private Station originStation;
 
-	public Station destinationStation;
+	private Station destinationStation;
 
-	public Airline airline;
+	private Airline airline;
 }
