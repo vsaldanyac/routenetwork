@@ -38,7 +38,7 @@ public class RouteController {
 	@GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 	@Operation(summary = "GET the routes", description = "GET the routes.")
 	@ApiResponse(responseCode = "200", description = "Ok", content = @Content(mediaType = "application/json", schema = @Schema(implementation = RouteResponseDTO[].class)))
-	public ResponseEntity<?> request(@RequestParam(value = "station", required = false) String stationCode, Pageable pageable) {
+	public ResponseEntity<?> getRoutes(@RequestParam(value = "station", required = false) String stationCode, Pageable pageable) {
 
 		List<RouteResponseDTO> routes;
 		if (stationCode == null) {
