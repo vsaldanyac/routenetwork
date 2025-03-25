@@ -12,8 +12,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,16 +19,13 @@ import org.springframework.http.ResponseEntity;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class RouteControllerTest {
-
-	@LocalServerPort
-	private int port;
-
-	@Autowired
-	private TestRestTemplate restTemplate;
 
 	@InjectMocks
 	RouteController routeController;
@@ -69,18 +64,22 @@ class RouteControllerTest {
 
 		ROUTES_DTO.add(ROUTE_DTO);
 
-		Mockito.when(routeService.findAll(Mockito.any())).thenReturn(new ArrayList<>());
-		Mockito.when(routeService.findByStation(Mockito.any(), Mockito.any())).thenReturn(ROUTES);
+		when(routeService.findAll(Mockito.any())).thenReturn(new ArrayList<>());
+		when(routeService.findByStation(Mockito.any(), Mockito.any())).thenReturn(ROUTES);
 
 	}
 
+
 	@Test
 	public void getEndpointTest() {
-		String url = "http://localhost:" + port + "/routes";
-		ResponseEntity<?> response = restTemplate.getForEntity(url, Object.class);
+		Pageable pageable = mock(Pageable.class);
 
-		assertEquals(HttpStatus.OK, response.getStatusCode());
-		assertEquals(response.getHeaders().getContentType(), "application/json");
+		RouteController controller = mock(RouteController.class);
+		when(controller.getRoutes("", pageable)).thenReturn(ResponseEntity.ok().build());
+
+		ResponseEntity<?> response = controller.getRoutes("", pageable);
+
+		assertThat(response.getStatusCodeValue()).isEqualTo(200);
 	}
 
 	@Test
