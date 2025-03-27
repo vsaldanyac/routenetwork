@@ -35,6 +35,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Service to manage the external API to get routes
+ */
 @Service
 public class RoutesExtApiServiceImpl implements RoutesExtApiService {
 
@@ -42,6 +45,9 @@ public class RoutesExtApiServiceImpl implements RoutesExtApiService {
 
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 
+	/**
+	 * External API url to get data. Set on application properties
+	 */
 	@Value("${caravelo.api.service.url:https://script.google.com/macros/s/AKfycbxRNENzlOcpCkzuPQvurSoqI0MTk1qgyOuBqdVyKF-B80BjKes-R0I4pbLnqCGBYaBu3g/exec/routes_api_key_iata_W6}")
 	private String apiService;
 

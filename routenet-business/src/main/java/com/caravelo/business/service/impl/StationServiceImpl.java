@@ -10,6 +10,9 @@
 
 	import java.util.List;
 
+	/**
+	 * Service to manage the station access to data layer
+	 */
 	@Service
 	public class StationServiceImpl implements StationService {
 

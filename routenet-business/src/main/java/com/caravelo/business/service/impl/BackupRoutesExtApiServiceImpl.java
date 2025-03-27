@@ -35,6 +35,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Service to manage the backup external API to get routes
+ */
 @Service
 public class BackupRoutesExtApiServiceImpl implements BackupRoutesExtApiService {
 
@@ -42,6 +45,9 @@ public class BackupRoutesExtApiServiceImpl implements BackupRoutesExtApiService 
 
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 
+	/**
+	 * External API url to get data. Set on application properties
+	 */
 	@Value("${caravelo.api.backup.service.url:https://script.google.com/macros/s/AKfycbxRNENzlOcpCkzuPQvurSoqI0MTk1qgyOuBqdVyKF-B80BjKes-R0I4pbLnqCGBYaBu3g/exec/routes_api_key_iata_W6}")
 	private String backupApiService;
 
