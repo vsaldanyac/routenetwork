@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Controller for managing Routes
+ */
 @RestController
 @CrossOrigin
 @RequestMapping(value = "routes")
@@ -35,6 +38,12 @@ public class RouteController {
 		this.routeService = routeService;
 	}
 
+	/**
+	 * Get all the routes using a station code filter
+	 * @param stationCode Code of the station be used to filter the response
+	 * @param pageable size, pageSize and pageNumber of the response
+	 * @return Routes that match the filter
+	 */
 	@GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 	@Operation(summary = "GET the routes", description = "GET the routes.")
 	@ApiResponse(responseCode = "200", description = "Ok", content = @Content(mediaType = "application/json", schema = @Schema(implementation = RouteResponseDTO[].class)))

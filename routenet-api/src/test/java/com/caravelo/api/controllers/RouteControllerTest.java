@@ -69,7 +69,9 @@ class RouteControllerTest {
 
 	}
 
-
+	/**
+	 * The GET route request is available and provides OK HTTP status response
+	 */
 	@Test
 	public void getEndpointTest() {
 		Pageable pageable = mock(Pageable.class);
@@ -82,6 +84,9 @@ class RouteControllerTest {
 		assertThat(response.getStatusCodeValue()).isEqualTo(200);
 	}
 
+	/**
+	 * Given a station code on the request, the system provides a valid response
+	 */
 	@Test
 	public void getRouteTest() {
 

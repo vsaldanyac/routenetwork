@@ -7,6 +7,9 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
+/**
+ * Map the DTO objects to business objects
+ */
 @Mapper
 public interface RouteMapper {
 

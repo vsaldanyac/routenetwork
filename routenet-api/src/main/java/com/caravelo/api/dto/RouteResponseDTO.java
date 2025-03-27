@@ -4,6 +4,9 @@ import com.caravelo.business.model.Airline;
 import com.caravelo.business.model.Station;
 import lombok.Data;
 
+/**
+ * Route API response
+ */
 @Data
 public class RouteResponseDTO {
 
