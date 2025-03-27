@@ -12,12 +12,10 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.data.domain.Pageable;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 class RouteServiceImplTest {
@@ -41,7 +39,7 @@ class RouteServiceImplTest {
 
 	private final String ROUTE_NAME = "ROUTE_NAME";
 
-	private final List<RouteEntity> ROUTE_LIST = Arrays.asList(ROUTE_1);
+	private final List<RouteEntity> ROUTE_LIST = Collections.singletonList(ROUTE_1);
 
 	private final List<RouteEntity> EMPTY_ROUTE_LIST = Collections.emptyList();
 
@@ -58,7 +56,7 @@ class RouteServiceImplTest {
 	public void findAllTest() {
 		TenantContext.setTenantId(TENANT_ID_VALID);
 		List<Route> routes = routeService.findAll(pageable);
-		assertTrue(!routes.isEmpty());
+		assertFalse(routes.isEmpty());
 		assertEquals(routes.get(0).getName(), ROUTE_NAME);
 	}
 
@@ -73,7 +71,7 @@ class RouteServiceImplTest {
 	public void findByStationTest() {
 		TenantContext.setTenantId(TENANT_ID_VALID);
 		List<Route> routes = routeService.findByStation(pageable, STATION_CODE);
-		assertTrue(!routes.isEmpty());
+		assertFalse(routes.isEmpty());
 		assertEquals(routes.get(0).getName(), ROUTE_NAME);
 	}
 

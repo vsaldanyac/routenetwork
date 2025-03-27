@@ -39,14 +39,14 @@ class RouteControllerTest {
 
 	private final String ROUTE_NAME = "MEX_ROUTE_1";
 
-	private List<Route> ROUTES = new ArrayList<>();
+	private final List<Route> ROUTES = new ArrayList<>();
 
 	private final Route ROUTE_1 = new Route();
 	private final Station STATION_1 = new Station();
 
 	private final RouteResponseDTO ROUTE_DTO = new RouteResponseDTO();
 
-	private List<RouteResponseDTO> ROUTES_DTO = new ArrayList<>();
+	private final List<RouteResponseDTO> ROUTES_DTO = new ArrayList<>();
 
 	@Autowired
 	private ObjectMapper objectMapper;
