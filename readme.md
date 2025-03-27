@@ -15,6 +15,7 @@ The project leverages the following technologies, frameworks, and libraries:
 - **Log4j**: Logging framework for monitoring and debugging.
 - **JPA (Hibernate)**: To handle object-relational mapping and database operations.
 - **MySQL**: Relational database management system for storing data.
+- **Swagger**: API Documentation. Used the openApi implementation.
 
 ---
 
