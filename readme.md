@@ -55,10 +55,10 @@ For this reason, the responses get from the sample are hosted in other server.
 ## Planned Improvements
 For future releases, the following improvements are being considered:
 - **Hexagonal Architecture**: To further decouple application components and improve maintainability.
-- **Enhanced Filtering**: Implementing more accurate and efficient filtering mechanisms.
+- **Enhanced Filtering**: Implementing more accurate and efficient filtering mechanisms, providing Valid values.
 - **Spring Security**: Implementing JWT access token.
 - **Pageable**: Return a Page instead of raw entity json data to allow pagination to frontend.
-
+- **More accurate database definition**: Make a comprehensive definition of the database instead of leaving the JPA doing it.
 ---
 
 ## Dockerization
