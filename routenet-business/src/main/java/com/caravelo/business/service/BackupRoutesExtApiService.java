@@ -4,7 +4,7 @@ import com.caravelo.business.model.external.FlightData;
 
 import java.util.List;
 
-public interface BackupFlightsApiService {
+public interface BackupRoutesExtApiService {
 
-	List<FlightData> getFlights();
+	List<FlightData> getRoutes();
 }

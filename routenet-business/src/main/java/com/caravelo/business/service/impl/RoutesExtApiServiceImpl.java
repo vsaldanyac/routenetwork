@@ -3,7 +3,7 @@ package com.caravelo.business.service.impl;
 import com.caravelo.business.exception.EndpointNotAvailableException;
 import com.caravelo.business.exception.ParsingExternalDataException;
 import com.caravelo.business.model.external.StationData;
-import com.caravelo.business.service.FlightsApiService;
+import com.caravelo.business.service.RoutesExtApiService;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -36,9 +36,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-public class FlightsApiServiceImpl implements FlightsApiService {
+public class RoutesExtApiServiceImpl implements RoutesExtApiService {
 
-	private static final Logger LOGGER = LogManager.getLogger(FlightsApiServiceImpl.class);
+	private static final Logger LOGGER = LogManager.getLogger(RoutesExtApiServiceImpl.class);
 
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 
@@ -47,14 +47,14 @@ public class FlightsApiServiceImpl implements FlightsApiService {
 
 	private final RestTemplate restTemplate;
 
-	public FlightsApiServiceImpl(RestTemplateBuilder restTemplateBuilder) {
+	public RoutesExtApiServiceImpl(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
 	}
 
 	private void getFlightsFromGoogleScript() {
 		try {
 			// Carga las credenciales de OAuth 2.0 desde el archivo client_secret.json
-			GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(FlightsApiServiceImpl.class.getResourceAsStream("/client_secret.json")));
+			GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(RoutesExtApiServiceImpl.class.getResourceAsStream("/client_secret.json")));
 
 			// Configura el flujo de autorización de OAuth 2.0
 			GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
@@ -78,7 +78,7 @@ public class FlightsApiServiceImpl implements FlightsApiService {
 	}
 
 	@Override
-	public List<StationData> getFlights() throws EndpointNotAvailableException, ParsingExternalDataException {
+	public List<StationData> getRoutes() throws EndpointNotAvailableException, ParsingExternalDataException {
 		try {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);

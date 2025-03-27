@@ -3,7 +3,7 @@ package com.caravelo.business.service.impl;
 import com.caravelo.business.exception.EndpointNotAvailableException;
 import com.caravelo.business.exception.ParsingExternalDataException;
 import com.caravelo.business.model.external.FlightData;
-import com.caravelo.business.service.BackupFlightsApiService;
+import com.caravelo.business.service.BackupRoutesExtApiService;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -36,9 +36,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-public class BackupFlightsApiServiceImpl implements BackupFlightsApiService {
+public class BackupRoutesExtApiServiceImpl implements BackupRoutesExtApiService {
 
-	private static final Logger LOGGER = LogManager.getLogger(BackupFlightsApiServiceImpl.class);
+	private static final Logger LOGGER = LogManager.getLogger(BackupRoutesExtApiServiceImpl.class);
 
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 
@@ -47,14 +47,14 @@ public class BackupFlightsApiServiceImpl implements BackupFlightsApiService {
 
 	private final RestTemplate restTemplate;
 
-	public BackupFlightsApiServiceImpl(RestTemplateBuilder restTemplateBuilder) {
+	public BackupRoutesExtApiServiceImpl(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
 	}
 
 	private void getFlightsFromGoogleScript() {
 		try {
 			// Carga las credenciales de OAuth 2.0 desde el archivo client_secret.json
-			GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(BackupFlightsApiServiceImpl.class.getResourceAsStream("/client_secret.json")));
+			GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(BackupRoutesExtApiServiceImpl.class.getResourceAsStream("/client_secret.json")));
 
 			// Configura el flujo de autorización de OAuth 2.0
 			GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
@@ -78,7 +78,7 @@ public class BackupFlightsApiServiceImpl implements BackupFlightsApiService {
 	}
 
 	@Override
-	public List<FlightData> getFlights() throws EndpointNotAvailableException, ParsingExternalDataException {
+	public List<FlightData> getRoutes() throws EndpointNotAvailableException, ParsingExternalDataException {
 		try {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
